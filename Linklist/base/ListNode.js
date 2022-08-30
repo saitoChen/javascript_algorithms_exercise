@@ -35,8 +35,19 @@ const print = (linkList) => {
     }
 }
 
+// get center postion in linklist
+const getListMid = (head) => {
+    let slow = fast = head
+    while(fast && fast.next) {
+        slow = slow.next
+        fast = fast.next.next
+    }
+    return slow
+}
+
 module.exports = {
     ListNode,
     LinkList,
-    print
+    print,
+    getListMid
 }
