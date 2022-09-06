@@ -5,27 +5,26 @@
  */
 class Node {
     constructor(value, left, right) {
-        this.value = value
+        this.val = value
         this.left = left || null
         this.right = right || null
     }
 }
 
-// 根节点
-let root = null 
-
 class BST {
-    constructor() {}
+    constructor(root) {
+        this.root = root
+    }
     insert(val) {
         const newNode = new Node(val)
-        if (!root) {
-            root = newNode
+        if (!this.root) {
+            this.root = newNode
         } else {
-            this.insertNode(root, newNode)
+            this.insertNode(this.root, newNode)
         }
     }
     insertNode(root, node) {
-        if (root.value > node.value) {
+        if (root.val > node.val) {
             if (!root.left) {
                 root.left = node
             } else {
@@ -41,11 +40,51 @@ class BST {
     }
 }
 
-const NodeList = [1, 2, 3, null, 4, 6, 7]
-const bst = new BST()
+class Tree {
+    constructor(list) {
+        this.queue = []
+        this.list = list
+        this.root = null
+        this.initQueue()
+    }
 
-NodeList.forEach(value => {
-    bst.insert(value)
-})
+    initQueue() {
+        this.root = new Node(this.list[0])
+        this.queue.unshift(this.root)
+    }
 
-console.log(root)
+    generateTree() {
+        let oriention = -1
+        for (let i = 1; i < this.list.length; i++) {
+            let node = this.queue[this.queue.length - 1]
+            if (oriention === -1) {
+                node.left = new Node(this.list[i])
+                this.queue.unshift(node.left)
+                oriention = 1
+            } else {
+                node.right = new Node(this.list[i])
+                this.queue.unshift(node.right)
+                oriention = -1
+                // 此时需要弹出队列的最后一项，因为它的左子节点和右子节点都遍历完毕了
+                this.queue.pop()
+            }
+        }
+        return this.root
+    }
+}
+
+const array = [1, 5, 4, 3, 5, 7, 23, null, 2]
+
+console.log(new Tree(array).generateTree())
+
+const generatorBST = (list, bst) => {
+    list.forEach(node => {
+        bst.insert(node)
+    })
+}
+
+
+module.exports = {
+    BST,
+    generatorBST
+}
