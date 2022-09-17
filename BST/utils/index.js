@@ -16,11 +16,13 @@ class BST {
         this.root = root
     }
     insert(val) {
-        const newNode = new Node(val)
-        if (!this.root) {
-            this.root = newNode
-        } else {
-            this.insertNode(this.root, newNode)
+        if (val !== null) {
+            const newNode = new Node(val)
+            if (!this.root) {
+                this.root = newNode
+            } else {
+                this.insertNode(this.root, newNode)
+            }
         }
     }
     insertNode(root, node) {
