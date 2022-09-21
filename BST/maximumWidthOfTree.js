@@ -12,6 +12,8 @@
 // trick -> 给树编号，跟节点为i，那么左侧子节点就是2i，右侧子节点就是2i + 1
 // 树有可能很大，需要使用bigInt
 
+// 另外一题，巩固时再写 https://leetcode.cn/problems/print-binary-tree/
+
 const { Tree } = require('./utils/index')
 
 const root = new Tree([1,3,2,5,3,null,9]).generateTree()
