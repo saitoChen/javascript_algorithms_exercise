@@ -25,41 +25,25 @@ const distanceK = (root, target, k) => {
     traverse(root, null)
 
     const result = []
-    let dist = 0
 
-    // 使用BFS
-    // 创建队列
-    const queue = [root]
-    // 用来记录节点是否访问过
-    const visited = new Set()
-    visited.add(target.val)
-    while(queue.length > 0) {
-        const len = queue.length
-        for (let i = 0; i < len; i++) {
-            const node = queue.shift()
+    // 使用dfs
+    // 直接来吧
 
-            if (dist === k) {
-                result.push(node.val)
-            }
-
-            const parent = parentMap.get(node.val)
-            if (parent !== null && !visited.has(parent.val)) {
-                queue.push(parent)
-                visited.add(parent.val)
-            }
-            if (node.left !== null && !visited.has(node.left.val)) {
-                queue.push(node.left)
-                visited.add(node.left.val)
-            }
-            if (node.right !== null && !visited.has(node.right.val)) {
-                queue.push(node.right)
-                visited.add(node.right.val)
-            }
+    const findDist = (node, from, dist, k) => {
+        if (node === null || node.val === null) return
+        if (dist === k) {
+            result.push(node.val)
+            return
         }
-
-        dist++
+        // 如果访问过这个节点，就不递归了
+        node.left !== from && findDist(node.left, node, dist + 1, k)
+        node.right !== from && findDist(node.right, node, dist + 1, k)
+        parentMap.get(node.val) !== from && findDist(parentMap.get(node.val), node, dist + 1, k)
     }
-    return root
+
+    findDist(target, null, 0, k)
+   
+    return result
 
 }
 
