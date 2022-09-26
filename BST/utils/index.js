@@ -59,7 +59,7 @@ class Tree {
         let oriention = -1
         for (let i = 1; i < this.list.length; i++) {
             let node = this.queue[this.queue.length - 1]
-            if (node.val) {
+            if (node.val || node.val === 0) {
                 if (oriention === -1) {
                     node.left = new Node(this.list[i])
                     this.queue.unshift(node.left)
