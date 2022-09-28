@@ -59,13 +59,13 @@ class Tree {
         let oriention = -1
         for (let i = 1; i < this.list.length; i++) {
             let node = this.queue[this.queue.length - 1]
-            if (node.val || node.val === 0) {
+            if (node) {
                 if (oriention === -1) {
-                    node.left = new Node(this.list[i])
+                    node.left = this.list[i] ? new Node(this.list[i]) : null
                     this.queue.unshift(node.left)
                     oriention = 1
                 } else {
-                    node.right = new Node(this.list[i])
+                    node.right = this.list[i] ? new Node(this.list[i]) : null
                     this.queue.unshift(node.right)
                     oriention = -1
                     // 此时需要弹出队列的最后一项，因为它的左子节点和右子节点都遍历完毕了

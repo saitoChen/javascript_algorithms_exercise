@@ -34,7 +34,7 @@ const sumRootToLeaf = (root) => {
     const sum = result.reduce((prev, cur) => {
         return prev + parseInt(cur, 2)
     }, 0) 
-
+    
     return sum
 }
 
