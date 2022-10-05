@@ -24,6 +24,8 @@ const pathSum = (root, target) => {
         if (root && !root.left && !root.right) {
             if (root.val === target) {
                 result.push([...path, root.val])
+                // path.push(root.val)
+                result.push([...path])
             }
             return
         }
