@@ -22,31 +22,3 @@ const isSymmetric = (root) => {
 
 console.log(isSymmetric(root))
 
-// 思路2： BFS
-const isSymmetric1 = (root) => {
-    if (!root) return true
-    const queue = [root]
-    let res = true
-    while(queue.length > 0) {
-        const len = queue.length;
-        if (len === 1) {
-            const node = queue.pop()
-            queue.push(node.left)
-            queue.push(node.right)
-            continue
-        }
-        for (let i = 0, j = len - 1; i !== j; i++, j-- ) {
-            if (queue[i].val !== queue[j].val) {
-                res = false
-            }
-            // 两端清除，并将他们的子节点添加到队列中
-            let leftNode = queue.pop()
-            queue.push(leftNode.left)
-            let rightNode = queue.shift()
-            queue.push(rightNode.right)
-        }
-    }
-    return res
-}
-
-console.log(isSymmetric1(root))
