@@ -14,7 +14,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/Array/searchInsertPosition.js"
+      "program": "${workspaceFolder}/BinarySearch2/findRightPosition.js"
     }
   ]
 }
