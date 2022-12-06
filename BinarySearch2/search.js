@@ -10,7 +10,8 @@ const arr = [1, 2, 3, 4, 5, 6, 7]
 const search = (nums, target) => {
     let start = 0, end = nums.length - 1
     while(start <= end) {
-        const mid = Math.floor((start + end) / 2)
+        // 使用Math.floor((end - start)/2)的原因是防止end和start过大导致溢出
+        const mid = start + Math.floor((end - start)/2)
         if (nums[mid] === target) {
             return nums[mid]
         } else if (nums[mid] < target) {
@@ -22,4 +23,4 @@ const search = (nums, target) => {
     return null
 }
 
-console.log(search(arr, 9))
+console.log(search(arr, 4))
