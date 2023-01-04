@@ -14,7 +14,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/Array/maximumNumberOfVowels.js"
+      "program": "${workspaceFolder}/Array/island.js"
     }
   ]
 }
