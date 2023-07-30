@@ -14,7 +14,11 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
+<<<<<<< HEAD
       "program": "${workspaceFolder}/Stack/valid-parentheses.js"
+=======
+      "program": "${workspaceFolder}/DP/longestCommonSubSequence.js"
+>>>>>>> 9d531904198a98f71b3767e4dd11128a0cd602eb
     }
   ]
 }

@@ -42,4 +42,8 @@ const swap = (nums, i, j) => {
     return [nums[i], nums[j]] = [nums[j], nums[i]]
 }
 
+<<<<<<< HEAD
 console.log(sortArray([5, 4, 2, 1, 6, 7]))
+=======
+console.log(sortArray([5,2,3,1]))
+>>>>>>> 9d531904198a98f71b3767e4dd11128a0cd602eb

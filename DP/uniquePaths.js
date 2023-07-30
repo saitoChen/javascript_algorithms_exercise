@@ -4,7 +4,7 @@
 // 思路
 // dp[i][j]表示在m,n的网格中，走到i，j的位置上时有dp[i][j]条不同的路径
 // 递推公式：dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
-
+// 初始：所有横纵坐标有0的一律为0，有1的一律为1
 const uniquePaths = (m,n) => {
     const dp = new Array(m+1).fill(0).map(() => new Array(n+1).fill(0))
 
