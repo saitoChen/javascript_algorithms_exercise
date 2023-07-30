@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @Author: chenjianfeng chenjianfeng93@163.com
  * @Date: 2022-12-06 23:21:00
@@ -43,41 +42,4 @@ const swap = (nums, i, j) => {
     return [nums[i], nums[j]] = [nums[j], nums[i]]
 }
 
-=======
-var sortArray = function(nums) {
-  // return nums.sort((a, b) => a - b)
-  // 快排
-  const quickSort = (nums, start, end) => {
-      if (start > end) return
-      let pivot = nums[start]
-      let i = start, j = end
-      while(i !== j) {
-          while(nums[i] <= pivot && i < j) {
-              i++
-          }
-          
-          while(nums[j] >= pivot && i < j ) {
-              j--
-          }
-
-          if (i < j) {
-              [nums[i], nums[j]] = [nums[j], nums[i]]
-          }
-
-      }
-
-      nums[start] = nums[i]
-      nums[i] = pivot
-
-      quickSort(nums, start, i - 1)
-      quickSort(nums, i + 1, end)
-
-      return nums
-  }
-
-  return quickSort(nums, 0, nums.length - 1)
-};
-
-
->>>>>>> ca399f5d77d34ba401b28a5b856968c6df67efef
-console.log(sortArray([5,2,3,1]))
+console.log(sortArray([5, 4, 2, 1, 6, 7]))

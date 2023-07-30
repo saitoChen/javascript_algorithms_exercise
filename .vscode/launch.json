@@ -14,7 +14,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/Array/island.js"
+      "program": "${workspaceFolder}/Stack/valid-parentheses.js"
     }
   ]
 }
