@@ -3,8 +3,8 @@
  * @Date: 2022-12-06 23:21:00
  * @Description: 
  */
-var sortArray = function(nums) {
-    
+var sortArray = function (nums) {
+
     quickSort(nums, 0, nums.length - 1)
 
     return nums
@@ -42,4 +42,4 @@ const swap = (nums, i, j) => {
     return [nums[i], nums[j]] = [nums[j], nums[i]]
 }
 
-console.log(sortArray([5,2,3,1]))
+console.log(sortArray([5, 2, 3, 1]))
