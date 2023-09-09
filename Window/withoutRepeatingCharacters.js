@@ -17,7 +17,7 @@ const lengthOfLongestSubstring = (s) => {
             start = Math.max(map.get(s.charAt(end)), start)
         }
         max = Math.max(max, end - start + 1)
-        // 记录当前字符所在的位置
+        // 记录当前字符的下一个位置
         map.set(s.charAt(end), end + 1)
     }
     return max
