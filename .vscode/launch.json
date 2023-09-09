@@ -16,7 +16,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/simple/array/plusone.js"
+      "program": "${workspaceFolder}/simple/array/removeElement.js"
     }
   ]
 }
