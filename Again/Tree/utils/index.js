@@ -89,7 +89,6 @@ const generatorBST = (list, bst) => {
 }
 
 
-
 module.exports = {
     Node,
     BST,
