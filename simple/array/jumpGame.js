@@ -1,8 +1,3 @@
-/*
- * @Author: chenjianfeng chenjianfeng93@163.com
- * @Date: 2023-09-26 15:58:37
- * @Description: 
- */
 // https://leetcode.cn/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150
 
 var canJump = function(nums) {

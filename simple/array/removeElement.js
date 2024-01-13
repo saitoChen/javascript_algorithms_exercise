@@ -1,3 +1,8 @@
+/*
+ * @Author: chenjianfeng chenjianfeng93@163.com
+ * @Date: 2023-09-09 13:13:47
+ * @Description: 
+ */
 // https://leetcode.cn/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150
 
 /**
@@ -28,7 +33,6 @@ var removeElement = function(nums, val) {
     // }
 
     // return nums.slice(0, i + 1)
-    debugger
     // 官方推荐的双指针
     let len = nums.length
     let left = 0, right = 0

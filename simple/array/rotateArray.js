@@ -32,22 +32,29 @@ var rotate = function(nums, k) {
 
 
     // 第二种方案：核心还是k %= nums.length 来获得翻转的位置
-    // 需要额外的空间
-    const result = []
-    const len = nums.length
-    const mid = k % len
+    // 需要额外的空间,这个写法不对
+    // const result = []
+    // const len = nums.length
+    // const mid = k % len
 
-    let last = len - 1
-    while (last > mid) {
-        result.unshift(nums[last])
-        last--
-    }
-    result.push(...nums.slice(0, mid + 1))
-    for (let i = 0; i < result.length; i++) {
-        nums[i] = result[i]
-    }
+    // let last = len - 1
+    // while (last > mid) {
+    //     result.unshift(nums[last])
+    //     last--
+    // }
+    // result.push(...nums.slice(0, mid + 1))
+    // for (let i = 0; i < result.length; i++) {
+    //     nums[i] = result[i]
+    // }
 
-    return nums
+    // return nums
+
+    // 重写方案二
+    let result = [], i = 0, len = nums.length
+    while(i < len) {
+        result[i % k] = nums[i]
+        i++
+    }
 
 };
 
