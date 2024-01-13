@@ -16,7 +16,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/Again/PreSum/sumisksubarray.js"
+      "program": "${workspaceFolder}/Again/PreSum/beautifulSubArray.js"
     }
   ]
 }
